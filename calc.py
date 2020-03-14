@@ -17,7 +17,7 @@ def input_number():
     return num
 
 def input_oper():
-    oper = input("Операция(*, /, +, -, ^): ")
+    oper = input("Операция(*, /, +, -): ")
 
     if oper == '':
         oper = None
