@@ -22,6 +22,10 @@ class CalcTest(unittest.TestCase):
         "Возведение в степень"
         self.assertEqual(calc_me(7, 2,"^"), 49)
 
+    def test_unkn_oper(self):
+        """Негативный, ввод неизвестной операции"""
+        self.assertEqual(calc_me(7, 2,"!"), 'Unknown operation')
+
     def test_div_neg(self):
         """Негативный, деление на ноль"""
         self.assertEqual(calc_me(12, 0,"/"), 'ERROR: Divide by zero!')
@@ -34,9 +38,16 @@ class CalcTest(unittest.TestCase):
         """Негативный, отсутствие y"""
         self.assertEqual(calc_me(4, None,"/"), 'ERROR: send me Number2')
 
-    def test_simb(self):
-        """Негативный, ввод символьных значений"""
+    def test_num1_simb(self):
+        """Негативный, ввод символьных значений  Number1"""
+        self.assertEqual(calc_me(".1", 3,"+"), 'ERROR: now it is does not supported')
+
+    def test_num2_simb(self):
+        """Негативный, ввод символьных значений Number2"""
         self.assertEqual(calc_me(4, "!","/"), 'ERROR: now it is does not supported')
+
+
+
 
 
 if __name__ == '__main__':
