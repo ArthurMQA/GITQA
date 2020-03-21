@@ -90,6 +90,6 @@ class NavigationTest(BaseCase):
         # английский текст не должен совпадать с русским
         ru_text_price = self.get_text('//*[@id="products"]/article[1]/a/div[2]/p[3]/span[2]')
         self.assert_not_equal(eng_text, ru_text)
-        self.assert_equal(eng_text_price, ru_text_price)
+        self.assert_not_equal(eng_text_price, ru_text_price)
 
 
